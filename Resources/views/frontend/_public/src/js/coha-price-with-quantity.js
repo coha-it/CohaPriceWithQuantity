@@ -1,6 +1,14 @@
 
 var cohaPwQ = {
-  'name': 'CohaPriceWithQuantity'
+  'name': 'CohaPriceWithQuantity',
+  'debug': false,
+};
+
+// Debug Log
+cohaPwQ.log = function(msg) {
+  if(cohaPwQ.debug) {
+    console.log(msg);
+  }
 };
 
 // The Main / Trigger-Function
@@ -19,7 +27,7 @@ cohaPwQ.triggerPriceWithQuantityChange = function (txt) {
         if ( iQuantity != 1 && iQuantity > 0) 
         {
             // Calculate Prices
-            console.log('XYZ1 cohaPwQ: '+txt);
+            cohaPwQ.log('XYZ1 cohaPwQ: '+txt);
 
             var fSinglePrice = parseFloat($('meta[itemprop="price"]').attr('content'));
             var fTotalPrice  = fSinglePrice * iQuantity;
