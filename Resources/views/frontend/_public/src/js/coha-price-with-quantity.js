@@ -58,7 +58,7 @@ cohaPwQ.formatPriceByLocale = function(value, locale) {
     case 'en-GB':
     case 'en-EN':
     case 'en':
-      currencyFormat = '$ 0.00';
+      currencyFormat = '$ 0.00 *';
       sPrice = 'Price with Quantity: '+currencyFormat.replace('0.00', fPrice);
       break;
     case 'de':
@@ -68,7 +68,7 @@ cohaPwQ.formatPriceByLocale = function(value, locale) {
         currencyDisplay: 'symbol',
         useGrouping: true
       });
-      sPrice = 'Gesamtpreis: '+sPrice;
+      sPrice = 'Gesamtpreis: '+sPrice+ ' *';
       break;
     default:
       sPrice = fPrice.toString();
