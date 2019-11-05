@@ -29,9 +29,10 @@ cohaPwQ.triggerPriceWithQuantityChange = function (txt) {
             // Calculate Prices
             cohaPwQ.log('XYZ1 cohaPwQ: '+txt);
 
+            var sLocale      = $('html').attr('lang');
             var fSinglePrice = parseFloat($('meta[itemprop="price"]').attr('content'));
             var fTotalPrice  = fSinglePrice * iQuantity;
-            var sTotalPrice  = cohaPwQ.formatPriceByLocale(fTotalPrice, 'de');
+            var sTotalPrice  = cohaPwQ.formatPriceByLocale(fTotalPrice, sLocale);
 
             eWrapper
               .html(sTotalPrice)
